@@ -1,20 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product Upload Form</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    RENT:
-    <form>
-        model
-        brand
-        color
-        image
-        year
-        cost
-        location
+    <h2>Product Upload Form</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" required>
+        <label for="brand">Brand:</label>
+        <input type="text" id="brand" name="brand" required>
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required>
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" required>
+        <label for="cost">Cost:</label>
+        <input type="number" id="cost" name="cost" required>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+        <input type="submit" value="Upload">
     </form>
 </body>
 </html>
